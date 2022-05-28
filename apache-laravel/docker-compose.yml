@@ -1,0 +1,20 @@
+version: '2.5'
+
+services:
+  php-apache:
+    container_name: php-apache
+    build: .
+    volumes:
+      - ./:/var/www/onemart
+    ports:
+      - 8000:80
+  mysql_service:
+    container_name: mysql_onemart
+    image: mysql
+    volumes:
+      - ~/mysql/onemart:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3300:3306
+      
