@@ -3,6 +3,7 @@ version: '2.5'
 services:
   php-apache:
     container_name: php-apache
+    restart: always
     build: .
     volumes:
       - ./:/var/www/onemart
