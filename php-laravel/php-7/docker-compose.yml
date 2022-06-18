@@ -3,6 +3,7 @@ version: '2.5'
 services:
   php-onemart:
     container_name: php-onemart
+    restart: always
     build: .
     volumes:
       - ./:/home/onemart
