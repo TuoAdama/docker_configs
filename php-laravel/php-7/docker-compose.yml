@@ -6,7 +6,7 @@ services:
     restart: always
     build: .
     volumes:
-      - ./:/home/onemart
+      - ./:/home
     ports:
       - 8000:8000
   mysql-onemart:
@@ -15,7 +15,9 @@ services:
     volumes:
       - ~/mysql/onemart:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ma_bd
+      MYSQL_USER: mon_user
+      MYSQL_PASSWORD: mon_user
     ports:
       - 3300:3306
-      
