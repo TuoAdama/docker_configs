@@ -1,21 +1,19 @@
 version: '2.5'
 
 services:
-  php-onemart:
-    container_name: php-onemart
-    restart: always
+  php-apache:
+    container_name: php-8-container
     build: .
     volumes:
-      - ./:/home/onemart
+      - ./:/home
     ports:
-      - 8000:8000
-  mysql-onemart:
-    container_name: mysql-onemart
+      - 8000:80 
+  mysql_service:
+    container_name: mysql_container
     image: mysql
     volumes:
-      - ~/mysql/onemart:/var/lib/mysql
+      - /home/tuoadama/mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
     ports:
       - 3300:3306
-      
